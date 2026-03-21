@@ -158,18 +158,43 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="image" class="form-label">Gambar Barang</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" 
+                            <label for="image" class="form-label">Gambar Utama Barang</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror"
                                    id="image" name="image" accept="image/*">
+                            <small class="form-text text-muted">Gambar utama yang akan ditampilkan di thumbnail</small>
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                            
+
                             @if(isset($product) && $product->image)
                                 <div class="mt-2">
-                                    <p class="text-muted">Gambar saat ini:</p>
-                                    <img src="{{ Storage::url($product->image) }}" 
+                                    <p class="text-muted">Gambar utama saat ini:</p>
+                                    <img src="{{ Storage::url($product->image) }}"
                                          class="img-thumbnail" width="200" alt="Gambar Produk">
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="images" class="form-label">Galeri Foto (Maksimal 5 foto)</label>
+                            <input type="file" class="form-control @error('images.*') is-invalid @enderror"
+                                   id="images" name="images[]" accept="image/*" multiple>
+                            <small class="form-text text-muted">Upload foto tambahan dari berbagai sudut (max 5 foto, max 2MB per foto)</small>
+                            @error('images.*')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+
+                            @if(isset($product) && $product->images->count() > 0)
+                                <div class="mt-2">
+                                    <p class="text-muted">Galeri foto saat ini:</p>
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        @foreach($product->images as $img)
+                                            <div class="position-relative">
+                                                <img src="{{ Storage::url($img->image_path) }}"
+                                                     class="img-thumbnail" width="150" alt="Foto Produk">
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             @endif
                         </div>
@@ -194,6 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const newCategoryInput = document.getElementById('new_category');
     const selectedCategoryText = document.getElementById('selectedCategoryText');
     const categoryDropdownItems = document.querySelectorAll('#categoryDropdown + ul.dropdown-menu a');
+    const imagesInput = document.getElementById('images');
 
     // Set the initial selected text based on the hidden input value
     if (categoryHiddenInput.value) {
@@ -240,6 +266,34 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedCategoryText.textContent = 'Pilih Kategori';
         }
         resetCategoryErrors();
+    });
+
+    // Validate multiple images upload (max 5)
+    imagesInput.addEventListener('change', function(e) {
+        const files = e.target.files;
+        if (files.length > 5) {
+            alert('Maksimal hanya boleh upload 5 foto!');
+            this.value = ''; // Reset input
+            return false;
+        }
+
+        // Validate file size (max 2MB per file)
+        for (let i = 0; i < files.length; i++) {
+            if (files[i].size > 2 * 1024 * 1024) {
+                alert('Ukuran file foto tidak boleh lebih dari 2MB: ' + files[i].name);
+                this.value = ''; // Reset input
+                return false;
+            }
+        }
+
+        // Show preview count
+        if (files.length > 0) {
+            const countMsg = files.length + ' foto dipilih';
+            const nextSibling = this.nextElementSibling;
+            if (nextSibling && nextSibling.classList.contains('form-text')) {
+                nextSibling.textContent = countMsg + ' - ' + nextSibling.textContent.replace(/^[^ ]+ /, '');
+            }
+        }
     });
 });
 </script>

@@ -44,7 +44,16 @@ class ProductController extends Controller
                 ->paginate(12);
         });
 
-        return view('marketplace', compact('products', 'categories'));
+        // Ambil produk yang dijual oleh user yang sedang login (untuk ditampilkan di bagian atas)
+        $myProducts = null;
+        if (Auth::check()) {
+            $myProducts = Product::where('user_id', Auth::id())
+                ->orderBy('created_at', 'desc')
+                ->take(6)
+                ->get();
+        }
+
+        return view('marketplace', compact('products', 'categories', 'myProducts'));
     }
 
     public function show($id)
@@ -52,7 +61,7 @@ class ProductController extends Controller
         $cacheKey = "product_detail_{$id}";
 
         $product = Cache::remember($cacheKey, 300, function () use ($id) {
-            return Product::with(['user', 'category', 'reviews.user'])->findOrFail($id);
+            return Product::with(['user', 'category', 'reviews.user', 'images'])->findOrFail($id);
         });
 
         $averageRating = $product->getAverageRatingAttribute();
@@ -80,6 +89,7 @@ class ProductController extends Controller
             'location' => 'required|string|max:255',
             'stock' => 'required|integer|min:0',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Validate that either category_id or new_category is provided
@@ -103,12 +113,25 @@ class ProductController extends Controller
             $data['category_id'] = $category->id;
         }
 
+        // Handle main image (first image)
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('products', 'public');
             $data['image'] = $imagePath;
         }
 
-        Product::create($data);
+        $product = Product::create($data);
+
+        // Handle multiple images
+        if ($request->hasFile('images')) {
+            $sortOrder = 0;
+            foreach ($request->file('images') as $image) {
+                $imagePath = $image->store('products', 'public');
+                $product->images()->create([
+                    'image_path' => $imagePath,
+                    'sort_order' => $sortOrder++,
+                ]);
+            }
+        }
 
         return redirect()->route('marketplace')->with('success', 'Produk berhasil ditambahkan!');
     }

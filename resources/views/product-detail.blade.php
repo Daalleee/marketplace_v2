@@ -6,11 +6,60 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            @if($product->image)
-                <img src="{{ Storage::url($product->image) }}" 
-                     class="img-fluid rounded shadow" alt="{{ $product->name }}">
+            @php
+                $allImages = [];
+                if ($product->image) {
+                    $allImages[] = $product->image;
+                }
+                if ($product->images && $product->images->count() > 0) {
+                    foreach ($product->images as $img) {
+                        $allImages[] = $img->image_path;
+                    }
+                }
+                $totalImages = count($allImages);
+            @endphp
+
+            @if($totalImages > 0)
+                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded shadow">
+                        @foreach($allImages as $index => $imagePath)
+                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                            <img src="{{ Storage::url($imagePath) }}" 
+                                 class="d-block w-100" 
+                                 alt="{{ $product->name }} - Foto {{ $index + 1 }}"
+                                 style="max-height: 500px; object-fit: contain; background: #f8f9fa;">
+                        </div>
+                        @endforeach
+                    </div>
+                    
+                    @if($totalImages > 1)
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                        <div class="carousel-indicators">
+                            @foreach($allImages as $index => $imagePath)
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="{{ $index }}" 
+                                    class="{{ $index === 0 ? 'active' : '' }}" 
+                                    aria-current="{{ $index === 0 ? 'true' : 'false' }}" 
+                                    aria-label="Foto {{ $index + 1 }}"></button>
+                            @endforeach
+                        </div>
+                        
+                        <div class="text-center mt-2">
+                            <span class="badge bg-secondary">
+                                <i class="fas fa-images me-1"></i>{{ $totalImages }} foto
+                            </span>
+                        </div>
+                    @endif
+                </div>
             @else
-                <img src="https://via.placeholder.com/500x400/000090/FFFFFF?text={{ urlencode($product->name) }}" 
+                <img src="https://via.placeholder.com/500x400/000090/FFFFFF?text={{ urlencode($product->name) }}"
                      class="img-fluid rounded shadow" alt="{{ $product->name }}">
             @endif
         </div>
@@ -22,7 +71,7 @@
                     
                     <div class="mb-3">
                         <label class="form-label">Harga:</label>
-                        <span class="fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</span>
+                        <span class="product-price" style="font-size: 1.5rem;">Rp {{ number_format($product->price, 0, ',', '.') }}</span>
                     </div>
 
                     <div class="mb-3">

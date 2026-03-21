@@ -83,6 +83,14 @@ class OrderController extends Controller
                 'price' => $cartItem->product->price
             ]);
 
+            // Kurangi stok produk
+            $cartItem->product->decrement('stock', $cartItem->quantity);
+
+            // Jika stok habis, ubah status menjadi sold
+            if ($cartItem->product->stock <= 0) {
+                $cartItem->product->update(['status' => 'sold']);
+            }
+
             // Simpan ID penjual
             $productSellers[] = $cartItem->product->user_id;
         }
@@ -144,8 +152,9 @@ class OrderController extends Controller
             return view('orders.payment', compact('order', 'snapToken'));
 
         } catch (\Exception $e) {
-            // Jika Midtrans gagal, kembalikan status produk ke available
+            // Jika Midtrans gagal, kembalikan stok produk
             foreach ($cart->items as $cartItem) {
+                $cartItem->product->increment('stock', $cartItem->quantity);
                 $cartItem->product->update(['status' => 'available']);
             }
 

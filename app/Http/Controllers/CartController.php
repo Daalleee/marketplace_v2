@@ -7,14 +7,15 @@ use App\Models\CartItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 
 class CartController extends Controller
 {
     public function index()
     {
         $cart = Cart::where('user_id', Auth::id())->first();
-        $cartItems = [];
-        
+        $cartItems = collect([]);
+
         if ($cart) {
             $cartItems = $cart->items()->with('product')->get();
         }

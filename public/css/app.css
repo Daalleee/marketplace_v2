@@ -92,12 +92,25 @@ html, body {
     transition: all 0.3s ease;
     margin-bottom: 20px;
     color: var(--black);
+    overflow: hidden;
 }
 
 .card-product:hover {
     box-shadow: 0 6px 20px var(--shadow);
     transform: translateY(-2px);
     border-color: var(--dark-gray);
+}
+
+/* Card product image - full tanpa gap */
+.card-product .card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-product .card-body {
+    padding: 1rem;
 }
 
 /* Tombol beli, tambah ke keranjang, jual barang - dihapus karena sudah digabung di atas */
@@ -334,6 +347,12 @@ label {
     color: var(--near-black);
 }
 
+/* Harga produk - warna hijau (khusus marketplace) */
+.product-price {
+    color: #28a745 !important;
+    font-weight: 700;
+}
+
 /* Tombol dalam konteks lain */
 .btn {
     transition: all 0.3s ease;
@@ -525,6 +544,9 @@ small {
     color: var(--near-black);
     background-color: var(--white);
     border: 1px solid var(--medium-gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .page-item.active .page-link {
@@ -537,6 +559,10 @@ small {
     color: var(--black);
     background-color: var(--light-gray);
     border-color: var(--dark-gray);
+}
+
+.pagination {
+    gap: 0.25rem;
 }
 
 /* Nav tabs */

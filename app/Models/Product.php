@@ -40,6 +40,12 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // Relasi ke images produk (multiple images)
+    public function images(): HasMany
+    {
+        return $this->hasMany(ProductImage::class)->orderBy('sort_order');
+    }
+
     // Relasi ke item keranjang
     public function cartItems(): HasMany
     {

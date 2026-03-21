@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->enum('status', ['available', 'sold'])->default('available');
+            $table->integer('stock')->default(0);
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }
