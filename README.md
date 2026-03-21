@@ -8,6 +8,18 @@
 
 ---
 
+## Daftar Isi
+
+- [Tentang Aplikasi](#tentang-aplikasi)
+- [Screenshot Aplikasi](#screenshot-aplikasi)
+- [Fitur Utama](#fitur-utama)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Instalasi](#instalasi)
+- [Setup Midtrans & Ngrok](#setup-midtrans--ngrok)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
+
+---
 
 ## Tentang Aplikasi
 
@@ -24,6 +36,7 @@ BarangBekas.id adalah solusi lengkap untuk kebutuhan jual beli barang bekas onli
 
 ## Screenshot Aplikasi
 
+**Catatan:** Screenshot dengan angka (1, 2, 3) adalah lanjutan dari halaman yang sama karena halaman terlalu panjang untuk diambil dalam satu screenshot.
 
 ### Authentication
 
@@ -37,31 +50,21 @@ BarangBekas.id adalah solusi lengkap untuk kebutuhan jual beli barang bekas onli
 
 ### Homepage & Marketplace
 
-#### Homepage (Banner + Produk)
-![Homepage](screenshots/02-homepage-marketplace/homepage.png)
+#### Homepage - Belum Login (Landing Page)
+![Homepage 1](screenshots/02-homepage-marketplace/homepage-1.png)
+![Homepage 2](screenshots/02-homepage-marketplace/homepage-2.png)
+![Homepage 3](screenshots/02-homepage-marketplace/homepage-3.png)
 
 #### Marketplace - Katalog Produk
 ![Marketplace](screenshots/02-homepage-marketplace/marketplace.png)
-![Marketplace 2](screenshots/02-homepage-marketplace/marketplace-1.png)
-![Marketplace 3](screenshots/02-homepage-marketplace/marketplace-2.png)
-
-#### Detail Produk dengan Carousel Foto
-![Product Detail](screenshots/02-homepage-marketplace/product-detail.png)
-![Product Detail 2](screenshots/02-homepage-marketplace/product-detail-1.png)
 
 ---
 
 ### User Dashboard
 
-#### Produk Saya (Dashboard Penjual)
-![My Products](screenshots/03-user-dashboard/my-products.png)
-
 #### Form Jual Barang (Upload Multiple Images)
 ![Sell Form](screenshots/03-user-dashboard/sell-form.png)
-![Sell Form 2](screenshots/03-user-dashboard/sell-form-1.png)
-
-#### Edit Produk
-![Edit Product](screenshots/03-user-dashboard/edit-product.png)
+![Sell Form 2](screenshots/03-user-dashboard/sell-form-2.png)
 
 ---
 
@@ -70,53 +73,19 @@ BarangBekas.id adalah solusi lengkap untuk kebutuhan jual beli barang bekas onli
 #### Keranjang Belanja
 ![Cart](screenshots/04-shopping-checkout/cart.png)
 
-#### Halaman Checkout
-![Checkout](screenshots/04-shopping-checkout/checkout.png)
-
-#### Pembayaran (Midtrans Snap Popup)
-![Payment](screenshots/04-shopping-checkout/payment.png)
-
 ---
 
 ### Order Management
 
 #### Riwayat Pesanan
 ![Orders](screenshots/05-order-management/orders.png)
-![Orders 2](screenshots/05-order-management/orders-1.png)
-
-#### Detail Pesanan
-![Order Detail](screenshots/05-order-management/order-detail.png)
-![Order Detail 2](screenshots/05-order-management/order-detail-1.png)
-
-#### Tracking Status Order
-![Order Tracking](screenshots/05-order-management/order-tracking.png)
 
 ---
 
 ### Communication
 
 #### Daftar Pesan
-![Messages List](screenshots/06-communication/messages-list.png)
-
-#### Jendela Chat
-![Chat Window](screenshots/06-communication/chat-window.png)
-![Chat Window 2](screenshots/06-communication/chat-window-1.png)
-
-#### Notifikasi Pesan Belum Dibaca
-![Unread Notification](screenshots/06-communication/unread-notification.png)
-
----
-
-### Profile & Settings
-
-#### Profil User
-![Profile](screenshots/07-profile-settings/profile.png)
-
-#### Edit Profil
-![Edit Profile](screenshots/07-profile-settings/edit-profile.png)
-
-#### Ubah Password
-![Change Password](screenshots/07-profile-settings/change-password.png)
+![Messages](screenshots/06-communication/messages.png)
 
 ---
 
@@ -424,7 +393,36 @@ Forwarding: https://abc123-def456.ngrok.io -> http://localhost:8000
 
 ---
 
+### Checklist Setup
 
+- [ ] Install Ngrok
+- [ ] Jalankan Laravel server: `php artisan serve --port=8000`
+- [ ] Jalankan Ngrok: `ngrok http 8000`
+- [ ] Copy URL Ngrok
+- [ ] Login ke Midtrans Dashboard
+- [ ] Setup webhook URL: `https://YOUR-URL.ngrok.io/midtrans/callback`
+- [ ] Test dengan order dummy
+- [ ] Cek webhook log di Midtrans Dashboard
+
+---
+
+## Kontribusi
+
+Kami sangat menghargai kontribusi dari semua orang! Berikut cara berkontribusi:
+
+1. Fork repository ini
+2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+### Code Style
+- Mengikuti PSR-12 coding standard
+- Gunakan Laravel Pint untuk code formatting: `composer lint`
+- Write tests untuk feature baru
+- Dokumentasikan perubahan di README
+
+---
 
 ## Lisensi
 
@@ -432,8 +430,31 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
 
+## Kontak & Support
+
+Jika ada pertanyaan atau masalah, silakan:
+
+- Buat Issue di repository GitHub ini
+- Email ke: support@barangbekas.id
+
+---
+
+## Terima Kasih
+
+Terima kasih kepada semua kontributor dan pengguna BarangBekas.id!
 
 **Dibuat dengan Laravel**
 
 ---
 
+## Changelog
+
+### Version 1.0.0 (2026-03-21)
+- Initial release
+- Full e-commerce functionality
+- Midtrans payment integration
+- Chat system
+- Review & rating system
+- Stock management
+- Multiple image upload
+- Responsive design
