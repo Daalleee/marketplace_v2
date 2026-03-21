@@ -393,36 +393,6 @@ Forwarding: https://abc123-def456.ngrok.io -> http://localhost:8000
 
 ---
 
-### Checklist Setup
-
-- [ ] Install Ngrok
-- [ ] Jalankan Laravel server: `php artisan serve --port=8000`
-- [ ] Jalankan Ngrok: `ngrok http 8000`
-- [ ] Copy URL Ngrok
-- [ ] Login ke Midtrans Dashboard
-- [ ] Setup webhook URL: `https://YOUR-URL.ngrok.io/midtrans/callback`
-- [ ] Test dengan order dummy
-- [ ] Cek webhook log di Midtrans Dashboard
-
----
-
-## Kontribusi
-
-Kami sangat menghargai kontribusi dari semua orang! Berikut cara berkontribusi:
-
-1. Fork repository ini
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
-
-### Code Style
-- Mengikuti PSR-12 coding standard
-- Gunakan Laravel Pint untuk code formatting: `composer lint`
-- Write tests untuk feature baru
-- Dokumentasikan perubahan di README
-
----
 
 ## Lisensi
 
@@ -430,31 +400,5 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
 
-## Kontak & Support
-
-Jika ada pertanyaan atau masalah, silakan:
-
-- Buat Issue di repository GitHub ini
-- Email ke: support@barangbekas.id
-
----
-
-## Terima Kasih
-
-Terima kasih kepada semua kontributor dan pengguna BarangBekas.id!
-
 **Dibuat dengan Laravel**
 
----
-
-## Changelog
-
-### Version 1.0.0 (2026-03-21)
-- Initial release
-- Full e-commerce functionality
-- Midtrans payment integration
-- Chat system
-- Review & rating system
-- Stock management
-- Multiple image upload
-- Responsive design
