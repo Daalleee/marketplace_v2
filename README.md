@@ -1,107 +1,451 @@
-# 📸 Screenshots Directory
+# BarangBekas.id - Marketplace Barang Bekas
 
-Folder ini digunakan untuk menyimpan semua screenshot aplikasi BarangBekas.id
+[![Laravel Version](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat-square&logo=laravel)](https://laravel.com)
+[![PHP Version](https://img.shields.io/badge/PHP-8.3+-777BB4?style=flat-square&logo=php)](https://php.net)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-## 📁 Struktur Folder
+**BarangBekas.id** adalah platform marketplace modern untuk jual beli barang bekas yang dirancang khusus untuk anak kos dan masyarakat umum. Aplikasi ini memungkinkan pengguna untuk menjual, membeli, dan berinteraksi dengan mudah dalam satu platform yang terintegrasi dengan sistem pembayaran online menggunakan Midtrans.
 
+---
+
+
+## Tentang Aplikasi
+
+BarangBekas.id adalah solusi lengkap untuk kebutuhan jual beli barang bekas online. Aplikasi ini dibangun menggunakan **Laravel 12** dengan fitur-fitur modern seperti:
+
+- E-commerce lengkap - Dari browsing hingga checkout
+- Pembayaran online - Integrasi Midtrans (QRIS, VA, E-Wallet, Credit Card)
+- Chat system - Komunikasi langsung antara pembeli dan penjual
+- Review & Rating - Sistem ulasan produk terverifikasi
+- Manajemen stok - Auto update stok saat pembelian
+- Keamanan terjamin - Session-based authentication dengan Laravel
+
+---
+
+## Screenshot Aplikasi
+
+
+### Authentication
+
+#### Login Page
+![Login](/storage/screenshots/01-authentication/login.png)
+
+#### Register Page
+![Register](/storage/screenshots/01-authentication/register.png)
+
+---
+
+### Homepage & Marketplace
+
+#### Homepage (Banner + Produk)
+![Homepage](/storage/screenshots/02-homepage-marketplace/homepage.png)
+
+#### Marketplace - Katalog Produk
+![Marketplace](/storage/screenshots/02-homepage-marketplace/marketplace.png)
+![Marketplace 2](/storage/screenshots/02-homepage-marketplace/marketplace-1.png)
+![Marketplace 3](/storage/screenshots/02-homepage-marketplace/marketplace-2.png)
+
+#### Detail Produk dengan Carousel Foto
+![Product Detail](/storage/screenshots/02-homepage-marketplace/product-detail.png)
+![Product Detail 2](/storage/screenshots/02-homepage-marketplace/product-detail-1.png)
+
+---
+
+### User Dashboard
+
+#### Produk Saya (Dashboard Penjual)
+![My Products](/storage/screenshots/03-user-dashboard/my-products.png)
+
+#### Form Jual Barang (Upload Multiple Images)
+![Sell Form](/storage/screenshots/03-user-dashboard/sell-form.png)
+![Sell Form 2](/storage/screenshots/03-user-dashboard/sell-form-1.png)
+
+#### Edit Produk
+![Edit Product](/storage/screenshots/03-user-dashboard/edit-product.png)
+
+---
+
+### Shopping & Checkout
+
+#### Keranjang Belanja
+![Cart](/storage/screenshots/04-shopping-checkout/cart.png)
+
+#### Halaman Checkout
+![Checkout](/storage/screenshots/04-shopping-checkout/checkout.png)
+
+#### Pembayaran (Midtrans Snap Popup)
+![Payment](/storage/screenshots/04-shopping-checkout/payment.png)
+
+---
+
+### Order Management
+
+#### Riwayat Pesanan
+![Orders](/storage/screenshots/05-order-management/orders.png)
+![Orders 2](/storage/screenshots/05-order-management/orders-1.png)
+
+#### Detail Pesanan
+![Order Detail](/storage/screenshots/05-order-management/order-detail.png)
+![Order Detail 2](/storage/screenshots/05-order-management/order-detail-1.png)
+
+#### Tracking Status Order
+![Order Tracking](/storage/screenshots/05-order-management/order-tracking.png)
+
+---
+
+### Communication
+
+#### Daftar Pesan
+![Messages List](/storage/screenshots/06-communication/messages-list.png)
+
+#### Jendela Chat
+![Chat Window](/storage/screenshots/06-communication/chat-window.png)
+![Chat Window 2](/storage/screenshots/06-communication/chat-window-1.png)
+
+#### Notifikasi Pesan Belum Dibaca
+![Unread Notification](/storage/screenshots/06-communication/unread-notification.png)
+
+---
+
+### Profile & Settings
+
+#### Profil User
+![Profile](/storage/screenshots/07-profile-settings/profile.png)
+
+#### Edit Profil
+![Edit Profile](/storage/screenshots/07-profile-settings/edit-profile.png)
+
+#### Ubah Password
+![Change Password](/storage/screenshots/07-profile-settings/change-password.png)
+
+---
+
+## Fitur Utama
+
+### Autentikasi & Profil
+- Registrasi & Login - Sistem autentikasi lengkap dengan Laravel UI
+- Profil Pengguna - Edit profil, avatar, nomor telepon, alamat
+- Session Management - Session berbasis database untuk keamanan lebih baik
+- Password Reset - Fitur lupa password via email
+
+### Marketplace
+- Katalog Produk - Tampilan grid produk dengan pagination
+- Pencarian & Filter - Cari produk berdasarkan nama, kategori, rentang harga
+- Detail Produk - Informasi lengkap produk dengan carousel galeri foto
+- Produk Sejenis - Rekomendasi produk dalam kategori yang sama
+- Lazy Loading Images - Optimasi loading gambar untuk performa lebih baik
+- Foto Full Card - Tampilan foto produk full tanpa space putih
+
+### Keranjang Belanja
+- Add to Cart - Tambah produk ke keranjang dengan validasi stok
+- Update Quantity - Ubah jumlah produk di keranjang
+- Remove Item - Hapus produk dari keranjang
+- Stock Validation - Validasi stok real-time saat menambah/edit keranjang
+- Cart Summary - Ringkasan total item dan harga otomatis
+
+### Checkout & Pembayaran
+- Checkout Process - Proses checkout dari keranjang
+- Order Summary - Ringkasan pesanan sebelum pembayaran
+- Payment Gateway - Integrasi dengan Midtrans untuk pembayaran online
+- Multiple Payment Methods - Support QRIS, VA, E-Wallet, Credit Card
+- Order Status Tracking - Lacak status pesanan (Pending, Waiting Payment, Paid, Shipped, Delivered, Cancelled)
+- Auto Stock Update - Stok berkurang otomatis saat checkout
+
+### Manajemen Pesanan
+- Order History - Riwayat semua pesanan dengan filter status
+- Order Detail - Detail lengkap setiap pesanan dengan item
+- Status Updates - Update status otomatis dari payment gateway webhook
+- Payment Page - Halaman pembayaran dengan Snap Midtrans popup
+- Rollback Stock - Stok dikembalikan jika pembayaran gagal
+
+### Chat & Komunikasi
+- Messaging System - Chat real-time antara pembeli dan penjual
+- Unread Counter - Notifikasi pesan belum dibaca di navbar
+- Chat History - Riwayat percakapan tersimpan per user
+- Auto Message - Pesan otomatis ke penjual saat order berhasil
+
+### Review & Rating
+- Product Reviews - Beri rating 1-5 bintang dan ulasan produk
+- Average Rating - Tampilan rating rata-rata produk
+- Verified Reviews - Review hanya dari pengguna yang pernah membeli
+- Review Management - Update review jika sudah pernah memberi ulasan
+
+### Jual Barang
+- Create Product - Form lengkap untuk menambah produk
+- Product Categories - Pilih kategori yang ada atau buat kategori baru
+- Multiple Image Upload - Upload 1 gambar utama + galeri (max 5 foto)
+- Stock Management - Kelola stok produk dengan update otomatis
+- Condition Selection - Pilih kondisi: Baru, Bekas Baik, Bekas Sedang, Bekas Kurang
+- Location Setting - Tentukan lokasi produk untuk informasi pembeli
+- Edit/Delete - Edit atau hapus produk yang sudah ditambahkan
+- Product Dashboard - Lihat semua produk yang dijual di bagian "Produk Saya"
+
+### Dashboard Penjual
+- My Products - List semua produk yang dijual dengan status (Aktif/Terjual/Stok Habis)
+- Quick Actions - Edit dan Hapus produk langsung dari dashboard
+- Sales Statistics - Lihat statistik penjualan dan performa produk
+- Order Management - Kelola pesanan masuk dari pembeli
+
+---
+
+## Teknologi yang Digunakan
+
+### Backend
+| Teknologi | Versi | Deskripsi |
+|-----------|-------|-----------|
+| PHP | 8.3+ | Bahasa pemrograman utama |
+| Laravel | 12.x | Framework PHP dengan fitur lengkap |
+| MySQL/SQLite | - | Database management system |
+| Eloquent ORM | - | Object-relational mapping Laravel |
+
+### Frontend
+| Teknologi | Versi | Deskripsi |
+|-----------|-------|-----------|
+| Bootstrap | 5.3.x | CSS framework untuk UI responsive |
+| Font Awesome | 6.x | Icon library untuk UI elements |
+| Vite | 5.x | Build tool untuk assets modern |
+| JavaScript | ES6+ | Interaktivitas frontend dan validation |
+
+### Payment & Third-Party
+| Layanan | Deskripsi |
+|---------|-----------|
+| Midtrans | Payment gateway untuk pembayaran online (QRIS, VA, E-Wallet, Credit Card) |
+| Laravel UI | Authentication scaffolding (Login, Register, Password Reset) |
+| Ngrok | Tunneling untuk webhook Midtrans saat development |
+
+### Development Tools
+| Tool | Deskripsi |
+|------|-----------|
+| Composer | PHP dependency management |
+| npm | Node.js package management untuk frontend |
+| PHPUnit | Testing framework untuk unit tests |
+| Laravel Pail | Log monitoring real-time |
+
+---
+
+## Instalasi
+
+### Prasyarat
+Pastikan sistem Anda telah terinstall:
+- PHP >= 8.3 dengan ekstensi: mbstring, xml, curl, mysql/pdo_sqlite
+- Composer - PHP package manager
+- Node.js & npm - Untuk frontend assets
+- MySQL atau SQLite - Database
+- Git - Version control
+
+### Langkah Instalasi
+
+#### 1. Clone Repository
+```bash
+git clone https://github.com/your-username/marketplace.git
+cd marketplace
 ```
-screenshots/
-├── 01-authentication/          # Login, Register, Forgot Password
-├── 02-homepage-marketplace/    # Homepage, Marketplace, Product Detail
-├── 03-user-dashboard/          # My Products, Sell Form, Edit Product
-├── 04-shopping-checkout/       # Cart, Checkout, Payment
-├── 05-order-management/        # Order History, Order Detail
-├── 06-communication/           # Messages, Chat
-└── 07-profile-settings/        # Profile, Edit Profile, Settings
+
+#### 2. Install Dependencies
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+npm install
 ```
 
-## ✅ Checklist Screenshot
+#### 3. Setup Environment
+```bash
+# Copy file environment
+cp .env.example .env
 
-### 01-authentication/
-- [ ] `login.png` - Halaman Login
-- [ ] `register.png` - Halaman Register
-- [ ] `forgot-password.png` - Halaman Lupa Password
-
-### 02-homepage-marketplace/
-- [ ] `homepage.png` - Homepage (Banner + Produk)
-- [ ] `marketplace.png` - Katalog Produk dengan Filter
-- [ ] `product-detail.png` - Detail Produk dengan Carousel Foto
-
-### 03-user-dashboard/
-- [ ] `my-products.png` - Produk Saya (dengan Edit/Delete)
-- [ ] `sell-form.png` - Form Jual Barang (Upload Multiple Images)
-- [ ] `edit-product.png` - Edit Produk
-
-### 04-shopping-checkout/
-- [ ] `cart.png` - Keranjang Belanja
-- [ ] `checkout.png` - Halaman Checkout
-- [ ] `payment.png` - Halaman Pembayaran (Midtrans Snap Popup)
-
-### 05-order-management/
-- [ ] `orders.png` - Riwayat Pesanan
-- [ ] `order-detail.png` - Detail Pesanan
-- [ ] `order-tracking.png` - Tracking Status Order
-
-### 06-communication/
-- [ ] `messages-list.png` - Daftar Pesan
-- [ ] `chat-window.png` - Jendela Chat
-- [ ] `unread-notification.png` - Notifikasi Pesan Belum Dibaca
-
-### 07-profile-settings/
-- [ ] `profile.png` - Profil User
-- [ ] `edit-profile.png` - Edit Profil
-- [ ] `change-password.png` - Ubah Password
-
-## 🛠️ Tools Screenshot yang Direkomendasikan
-
-### Browser Extensions
-- **GoFullPage** (Chrome) - Full page screenshot
-- **Fireshot** - Screenshot dengan annotation
-- **Nimbus Screenshot** - Capture & edit
-
-### Desktop Applications
-- **Lightshot** - Quick screenshot (prnt.sc)
-- **Greenshot** - Open source dengan annotation
-- **ShareX** (Windows) - Advanced screenshot tool
-- **Flameshot** (Linux) - Screenshot dengan editor
-
-### Browser DevTools
-- Tekan **F12** → **Ctrl+Shift+P** (Chrome)
-- Ketik "screenshot"
-- Pilih **Capture full size screenshot**
-
-## 📏 Ukuran Screenshot
-
-- **Desktop**: 1920x1080 atau 1366x768
-- **Tablet**: 768x1024 (gunakan DevTools responsive mode)
-- **Mobile**: 375x667 atau 414x896 (responsive mode)
-
-## 💾 Format File
-
-- Gunakan **PNG** untuk kualitas terbaik
-- Nama file menggunakan **lowercase** dengan **dash separator**
-- Contoh: `product-detail.png`, `sell-form.png`
-
-## 📝 Tips
-
-1. **Bersihkan browser** - Hapus bookmark bar untuk screenshot lebih clean
-2. **Incognito mode** - Gunakan untuk tampilan tanpa extension
-3. **Consistent sizing** - Gunakan ukuran browser yang sama untuk semua screenshot
-4. **Highlight fitur** - Gunakan annotation (arrow, box) untuk highlight fitur penting
-5. **Before upload** - Compress gambar dengan TinyPNG atau Squoosh
-
-## 🔗 Update README
-
-Setelah screenshot selesai, update bagian ini di README.md:
-
-```markdown
-## 📸 Screenshot & Fitur
-
-### 1. Homepage / Beranda
-![Homepage](screenshots/02-homepage-marketplace/homepage.png)
-
-### 2. Marketplace
-![Marketplace](screenshots/02-homepage-marketplace/marketplace.png)
-
-... dan seterusnya
+# Generate application key
+php artisan key:generate
 ```
+
+#### 4. Konfigurasi Database
+Edit file `.env` dan sesuaikan konfigurasi database:
+
+**Opsi 1: SQLite (Recommended untuk development)**
+```env
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=laravel
+# DB_USERNAME=root
+# DB_PASSWORD=
+```
+
+```bash
+# Buat file database SQLite
+touch database/database.sqlite
+```
+
+**Opsi 2: MySQL/MariaDB**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=marketplace_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+#### 5. Migrasi Database
+```bash
+# Jalankan migrasi untuk membuat tabel
+php artisan migrate
+```
+
+#### 6. Build Assets
+```bash
+# Build frontend assets untuk production
+npm run build
+
+# Atau untuk development dengan hot reload
+npm run dev
+```
+
+#### 7. Storage Link
+```bash
+# Buat symbolic link untuk storage (gambar produk)
+php artisan storage:link
+```
+
+---
+
+## Setup Midtrans & Ngrok
+
+### PENTING: Mengapa Perlu Ngrok?
+
+Saat development, aplikasi berjalan di **localhost:8000** yang **tidak bisa diakses dari internet**. 
+
+**Midtrans memerlukan webhook URL** yang **publicly accessible** untuk mengirim notifikasi pembayaran otomatis. 
+
+**Ngrok** membuat tunnel dari internet ke localhost Anda, sehingga Midtrans bisa mengirim webhook.
+
+---
+
+### Langkah Setup Ngrok untuk Midtrans
+
+#### 1. Install Ngrok
+
+Download dari: https://ngrok.com/download
+
+Atau install via package manager:
+```bash
+# macOS
+brew install ngrok
+
+# Windows (Chocolatey)
+choco install ngrok
+
+# Linux
+snap install ngrok
+```
+
+#### 2. Jalankan Laravel Development Server
+
+Buka terminal pertama dan jalankan:
+```bash
+php artisan serve --port=8000
+```
+
+Aplikasi akan berjalan di: **http://127.0.0.1:8000**
+
+#### 3. Jalankan Ngrok
+
+Buka **terminal baru** (jangan tutup terminal Laravel) dan jalankan:
+```bash
+ngrok http 8000
+```
+
+Output akan menampilkan URL seperti ini:
+```
+Forwarding: https://abc123-def456.ngrok.io -> http://localhost:8000
+```
+
+**PENTING: Copy URL tersebut!** (contoh: `https://abc123-def456.ngrok.io`)
+
+> URL Ngrok berubah setiap restart! Setiap kali restart ngrok, URL akan berubah. Anda harus update webhook URL di Midtrans Dashboard.
+
+#### 4. Setup Webhook di Midtrans Dashboard
+
+1. Login ke [Midtrans Dashboard](https://dashboard.midtrans.com/)
+
+2. Masuk ke menu **Settings** → **Configuration**
+
+3. Scroll ke bagian **Payment Notification URL**
+
+4. Masukkan URL Ngrok + endpoint webhook:
+   ```
+   https://abc123-def456.ngrok.io/midtrans/callback
+   ```
+   *(Ganti `abc123-def456` dengan URL Ngrok Anda)*
+
+5. Klik **Save**
+
+#### 5. Test Webhook
+
+1. Buat order di aplikasi lokal Anda (http://127.0.0.1:8000)
+2. Lakukan pembayaran test di Midtrans Snap
+3. Midtrans akan mengirim webhook ke URL Ngrok
+4. Order status akan terupdate otomatis di aplikasi
+
+---
+
+### Troubleshooting
+
+#### Webhook tidak diterima oleh aplikasi:
+- Pastikan ngrok berjalan dan URL benar
+- Cek log Midtrans Dashboard → Transactions → Logs
+- Cek firewall tidak memblokir ngrok
+- Pastikan endpoint `/midtrans/callback` ada di `routes/web.php`
+
+#### Order status tidak update:
+- Cek webhook endpoint di `routes/web.php`
+- Pastikan `MidtransController@handleNotification` berfungsi
+- Cek log Laravel: `storage/logs/laravel.log`
+- Pastikan URL webhook di Midtrans Dashboard sudah benar
+
+#### URL Ngrok berubah-ubah:
+- Gunakan **Ngrok Auth Token** untuk URL lebih stabil:
+  ```bash
+  ngrok config add-authtoken YOUR_TOKEN
+  ```
+- Atau upgrade ke **Ngrok Paid Plan** untuk static domain
+
+---
+
+### Catatan Penting
+
+| Development | Production |
+|-------------|------------|
+| Gunakan Ngrok untuk webhook | Gunakan domain asli (https://yourdomain.com) |
+| URL berubah setiap restart | URL tetap (static) |
+| Midtrans Sandbox Mode | Midtrans Production Mode |
+| MIDTRANS_IS_PRODUCTION=false | MIDTRANS_IS_PRODUCTION=true |
+
+---
+
+### Checklist Setup
+
+- [ ] Install Ngrok
+- [ ] Jalankan Laravel server: `php artisan serve --port=8000`
+- [ ] Jalankan Ngrok: `ngrok http 8000`
+- [ ] Copy URL Ngrok
+- [ ] Login ke Midtrans Dashboard
+- [ ] Setup webhook URL: `https://YOUR-URL.ngrok.io/midtrans/callback`
+- [ ] Test dengan order dummy
+- [ ] Cek webhook log di Midtrans Dashboard
+
+---
+
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+
+**Dibuat dengan Laravel**
+
+---
+
