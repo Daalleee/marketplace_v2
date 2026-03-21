@@ -424,18 +424,6 @@ Forwarding: https://abc123-def456.ngrok.io -> http://localhost:8000
 
 ---
 
-### Checklist Setup
-
-- [ ] Install Ngrok
-- [ ] Jalankan Laravel server: `php artisan serve --port=8000`
-- [ ] Jalankan Ngrok: `ngrok http 8000`
-- [ ] Copy URL Ngrok
-- [ ] Login ke Midtrans Dashboard
-- [ ] Setup webhook URL: `https://YOUR-URL.ngrok.io/midtrans/callback`
-- [ ] Test dengan order dummy
-- [ ] Cek webhook log di Midtrans Dashboard
-
----
 
 
 ## Lisensi
