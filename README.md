@@ -28,95 +28,95 @@ BarangBekas.id adalah solusi lengkap untuk kebutuhan jual beli barang bekas onli
 ### Authentication
 
 #### Login Page
-![Login](/storage/screenshots/01-authentication/login.png)
+![Login](screenshots/01-authentication/login.png)
 
 #### Register Page
-![Register](/storage/screenshots/01-authentication/register.png)
+![Register](screenshots/01-authentication/register.png)
 
 ---
 
 ### Homepage & Marketplace
 
 #### Homepage (Banner + Produk)
-![Homepage](/storage/screenshots/02-homepage-marketplace/homepage.png)
+![Homepage](screenshots/02-homepage-marketplace/homepage.png)
 
 #### Marketplace - Katalog Produk
-![Marketplace](/storage/screenshots/02-homepage-marketplace/marketplace.png)
-![Marketplace 2](/storage/screenshots/02-homepage-marketplace/marketplace-1.png)
-![Marketplace 3](/storage/screenshots/02-homepage-marketplace/marketplace-2.png)
+![Marketplace](screenshots/02-homepage-marketplace/marketplace.png)
+![Marketplace 2](screenshots/02-homepage-marketplace/marketplace-1.png)
+![Marketplace 3](screenshots/02-homepage-marketplace/marketplace-2.png)
 
 #### Detail Produk dengan Carousel Foto
-![Product Detail](/storage/screenshots/02-homepage-marketplace/product-detail.png)
-![Product Detail 2](/storage/screenshots/02-homepage-marketplace/product-detail-1.png)
+![Product Detail](screenshots/02-homepage-marketplace/product-detail.png)
+![Product Detail 2](screenshots/02-homepage-marketplace/product-detail-1.png)
 
 ---
 
 ### User Dashboard
 
 #### Produk Saya (Dashboard Penjual)
-![My Products](/storage/screenshots/03-user-dashboard/my-products.png)
+![My Products](screenshots/03-user-dashboard/my-products.png)
 
 #### Form Jual Barang (Upload Multiple Images)
-![Sell Form](/storage/screenshots/03-user-dashboard/sell-form.png)
-![Sell Form 2](/storage/screenshots/03-user-dashboard/sell-form-1.png)
+![Sell Form](screenshots/03-user-dashboard/sell-form.png)
+![Sell Form 2](screenshots/03-user-dashboard/sell-form-1.png)
 
 #### Edit Produk
-![Edit Product](/storage/screenshots/03-user-dashboard/edit-product.png)
+![Edit Product](screenshots/03-user-dashboard/edit-product.png)
 
 ---
 
 ### Shopping & Checkout
 
 #### Keranjang Belanja
-![Cart](/storage/screenshots/04-shopping-checkout/cart.png)
+![Cart](screenshots/04-shopping-checkout/cart.png)
 
 #### Halaman Checkout
-![Checkout](/storage/screenshots/04-shopping-checkout/checkout.png)
+![Checkout](screenshots/04-shopping-checkout/checkout.png)
 
 #### Pembayaran (Midtrans Snap Popup)
-![Payment](/storage/screenshots/04-shopping-checkout/payment.png)
+![Payment](screenshots/04-shopping-checkout/payment.png)
 
 ---
 
 ### Order Management
 
 #### Riwayat Pesanan
-![Orders](/storage/screenshots/05-order-management/orders.png)
-![Orders 2](/storage/screenshots/05-order-management/orders-1.png)
+![Orders](screenshots/05-order-management/orders.png)
+![Orders 2](screenshots/05-order-management/orders-1.png)
 
 #### Detail Pesanan
-![Order Detail](/storage/screenshots/05-order-management/order-detail.png)
-![Order Detail 2](/storage/screenshots/05-order-management/order-detail-1.png)
+![Order Detail](screenshots/05-order-management/order-detail.png)
+![Order Detail 2](screenshots/05-order-management/order-detail-1.png)
 
 #### Tracking Status Order
-![Order Tracking](/storage/screenshots/05-order-management/order-tracking.png)
+![Order Tracking](screenshots/05-order-management/order-tracking.png)
 
 ---
 
 ### Communication
 
 #### Daftar Pesan
-![Messages List](/storage/screenshots/06-communication/messages-list.png)
+![Messages List](screenshots/06-communication/messages-list.png)
 
 #### Jendela Chat
-![Chat Window](/storage/screenshots/06-communication/chat-window.png)
-![Chat Window 2](/storage/screenshots/06-communication/chat-window-1.png)
+![Chat Window](screenshots/06-communication/chat-window.png)
+![Chat Window 2](screenshots/06-communication/chat-window-1.png)
 
 #### Notifikasi Pesan Belum Dibaca
-![Unread Notification](/storage/screenshots/06-communication/unread-notification.png)
+![Unread Notification](screenshots/06-communication/unread-notification.png)
 
 ---
 
 ### Profile & Settings
 
 #### Profil User
-![Profile](/storage/screenshots/07-profile-settings/profile.png)
+![Profile](screenshots/07-profile-settings/profile.png)
 
 #### Edit Profil
-![Edit Profile](/storage/screenshots/07-profile-settings/edit-profile.png)
+![Edit Profile](screenshots/07-profile-settings/edit-profile.png)
 
 #### Ubah Password
-![Change Password](/storage/screenshots/07-profile-settings/change-password.png)
+![Change Password](screenshots/07-profile-settings/change-password.png)
 
 ---
 
